@@ -314,7 +314,13 @@ function injectStructuredData(config) {
 }
 
 function initRevealAnimations() {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const items = document.querySelectorAll('.reveal');
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    items.forEach((el) => el.classList.add('in-view'));
+    return;
+  }
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -324,7 +330,7 @@ function initRevealAnimations() {
     });
   }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
 
-  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+  items.forEach((el) => observer.observe(el));
 }
 
 window.site = { loadConfig, setMeta, renderShell, injectStructuredData, initRevealAnimations };

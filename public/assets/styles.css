@@ -367,6 +367,7 @@ h2 { font-size: clamp(1.6rem, 3.4vw, 2.6rem); }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  .reveal { opacity: 1; transform: none; }
 }
 
 .gallery-image {
