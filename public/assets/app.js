@@ -280,11 +280,13 @@ function renderShell(config) {
 
   const openMenu = () => {
     document.body.classList.add('menu-open');
+    document.body.style.overflow = 'hidden';
     document.getElementById('navToggle')?.setAttribute('aria-expanded', 'true');
     document.getElementById('mobilePanel')?.setAttribute('aria-hidden', 'false');
   };
   const closeMenu = () => {
     document.body.classList.remove('menu-open');
+    document.body.style.overflow = '';
     document.getElementById('navToggle')?.setAttribute('aria-expanded', 'false');
     document.getElementById('mobilePanel')?.setAttribute('aria-hidden', 'true');
   };
@@ -294,6 +296,9 @@ function renderShell(config) {
   document.querySelectorAll('.mobile-nav a, .mobile-actions a').forEach((el) => el.addEventListener('click', closeMenu));
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') closeMenu();
+  });
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 760) closeMenu();
   });
 }
 

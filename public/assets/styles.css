@@ -17,6 +17,7 @@
   --radius-md: 18px;
   --shadow-soft: 0 20px 50px rgba(11, 25, 48, 0.09);
   --shadow-strong: 0 28px 60px rgba(11, 25, 48, 0.18);
+  --space-fluid: clamp(1rem, 2vw, 1.5rem);
 }
 
 * { box-sizing: border-box; }
@@ -61,7 +62,7 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: var(--space-fluid);
   padding: 0.9rem 0;
 }
 .brand {
@@ -118,6 +119,17 @@ img { max-width: 100%; display: block; }
   color: var(--surface);
   background: linear-gradient(120deg, var(--green), var(--blue));
 }
+.nav-link:focus-visible,
+.nav-cta:focus-visible,
+.btn:focus-visible,
+.float-cta a:focus-visible,
+.mobile-actions a:focus-visible,
+.mobile-nav a:focus-visible,
+.mobile-close:focus-visible,
+.nav-toggle:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--yellow) 58%, white);
+  outline-offset: 2px;
+}
 .nav-toggle {
   display: none;
   width: 42px;
@@ -138,6 +150,7 @@ img { max-width: 100%; display: block; }
   padding: 1.4rem 1.2rem 2rem;
   transform: translateY(-102%);
   transition: transform 360ms ease;
+  overflow-y: auto;
 }
 body.menu-open .mobile-panel { transform: translateY(0); }
 .mobile-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
@@ -182,7 +195,7 @@ h2 { font-size: clamp(1.6rem, 3.4vw, 2.6rem); }
 }
 
 .hero {
-  padding: 6.2rem 0 3.6rem;
+  padding: clamp(4.6rem, 8vw, 6.2rem) 0 3.6rem;
   overflow: clip;
 }
 .hero-grid {
@@ -197,6 +210,10 @@ h2 { font-size: clamp(1.6rem, 3.4vw, 2.6rem); }
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-soft);
   padding: clamp(1.2rem, 3vw, 2.1rem);
+}
+.hero-panel,
+.card {
+  backdrop-filter: blur(5px);
 }
 .cta-row { display: flex; flex-wrap: wrap; gap: 0.8rem; margin: 1.5rem 0 1.1rem; }
 .btn {
@@ -323,6 +340,15 @@ h2 { font-size: clamp(1.6rem, 3.4vw, 2.6rem); }
 .footer-links { display: grid; gap: 0.4rem; color: var(--text-muted); }
 .footer-note { margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid rgba(16,23,34,0.11); color: var(--text-muted); font-size: 0.88rem; }
 
+.split-grid {
+  grid-template-columns: 1.2fr .8fr;
+  align-items: start;
+}
+
+.glass-highlight {
+  background: linear-gradient(160deg,#fffdf8,#f0ece4);
+}
+
 .float-cta {
   position: fixed;
   right: 1rem;
@@ -338,6 +364,7 @@ h2 { font-size: clamp(1.6rem, 3.4vw, 2.6rem); }
   border-radius: 999px;
   padding: 0.56rem 0.9rem;
   box-shadow: var(--shadow-soft);
+  font-weight: 600;
 }
 
 .reveal { opacity: 1; transform: none; }
@@ -353,17 +380,46 @@ html.js .reveal.in-view { opacity: 1; transform: none; }
   .hero-grid { grid-template-columns: 1fr; }
   .hero-visual { min-height: 330px; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
+  .split-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 760px) {
+  body { padding-bottom: calc(4.4rem + env(safe-area-inset-bottom)); }
   .section { padding: 3.7rem 0; }
   .nav-links { display: none; }
   .nav-toggle { display: inline-flex; align-items: center; justify-content: center; }
   .hero { padding-top: 5rem; }
+  .hero-note { left: 0.8rem; right: 0.8rem; bottom: 0.8rem; font-size: 0.88rem; }
+  .hero-visual { min-height: 290px; }
   .micro-list { grid-template-columns: 1fr; }
-  .float-cta { left: 0.8rem; right: 0.8rem; flex-direction: row; justify-content: space-between; }
-  .float-cta a { font-size: 0.83rem; }
+  .float-cta {
+    left: 0.8rem;
+    right: 0.8rem;
+    bottom: calc(0.8rem + env(safe-area-inset-bottom));
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 999px;
+    padding: 0.3rem;
+    background: color-mix(in srgb, var(--surface) 86%, transparent);
+    border: 1px solid rgba(16,23,34,0.12);
+    backdrop-filter: blur(10px);
+  }
+  .float-cta a {
+    flex: 1;
+    text-align: center;
+    font-size: 0.83rem;
+    padding: 0.65rem 0.5rem;
+    box-shadow: none;
+    background: transparent;
+    border: 0;
+  }
   .footer-grid { grid-template-columns: 1fr; }
+}
+
+@media (min-width: 1180px) {
+  .hero-grid { gap: 2rem; }
+  .card { padding: 1.35rem; }
+  .nav-shell { padding: 1rem 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
