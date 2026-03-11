@@ -11,7 +11,6 @@ site.loadConfig().then(c=>{
   site.setMeta(c,'Galerie','Temps forts de la section Nação Capoeira.');
   site.renderShell(c);
   site.injectStructuredData(c);
-  site.initRevealAnimations();
 
   const assets = c.galleryAssets?.length ? c.galleryAssets : ['public/assets/images/gallery-01.jpg'];
   const captions = ['Baptême & passage de cordes','Stage musique','Démonstration publique'];
@@ -20,5 +19,6 @@ site.loadConfig().then(c=>{
     return `<figure class="card reveal"><img class="gallery-image" src="${src}" alt="${captions[i]}" loading="lazy"><figcaption class="small">${captions[i]}</figcaption></figure>`;
   }).join('');
   document.getElementById('galleryGrid').innerHTML = html;
+  site.initRevealAnimations();
 });
 </script></body></html>
