@@ -1,0 +1,23 @@
+<!doctype html><html lang="fr"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Horaires, tarifs, FAQ et inscription capoeira à Oullins.">
+<meta property="og:title" content="Cours & Tarifs"><meta property="og:description" content="Saison 2024-2025 : horaires et tarifs publics.">
+<link rel="stylesheet" href="public/assets/styles.css"><script defer src="public/assets/app.js"></script></head>
+<body><header id="site-nav" class="topbar"></header>
+<main class="section"><div class="container">
+<span class="eyebrow">Cours & Tarifs</span><h1>Pratiquer selon votre rythme</h1>
+<p class="lead">Cours enfants, ados et adultes, en parcours débutant ou confirmé. Pédagogie progressive et cadre collectif exigeant.</p>
+<div class="card"><span class="badge" id="season"></span><table id="schedule" class="table"></table></div>
+<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:1rem" id="prices"></div>
+<div class="card" style="margin-top:1rem"><h2>FAQ pratique</h2><div id="faq" class="faq"></div></div>
+<div class="card" style="margin-top:1rem"><h2>Inscription</h2><p>Contactez la section pour valider le cours adapté et la disponibilité. Un cours d'essai est recommandé avant inscription définitive.</p><a class="btn primary" href="contact.html">Demander des informations</a></div>
+</div></main>
+<div id="float-cta" class="float-cta"></div><footer id="site-footer" class="footer"></footer>
+<script>
+site.loadConfig().then(config=>{site.setMeta(config,'Cours & Tarifs','Horaires et tarifs de la section Nação Capoeira Oullins');site.renderShell(config);site.injectStructuredData(config);
+document.getElementById('season').textContent=config.seasonLabel;
+document.getElementById('schedule').innerHTML='<tr><th>Public</th><th>Niveau</th><th>Jour</th><th>Horaire</th><th>Lieu</th></tr>'+config.schedules.map(s=>`<tr><td>${s.audience}</td><td>${s.level}</td><td>${s.day}</td><td>${s.time}</td><td>${s.location}</td></tr>`).join('');
+document.getElementById('prices').innerHTML=config.prices.map(p=>`<article class="card"><h3>${p.label}</h3><p style="font-size:2rem;margin:0">${p.price}</p></article>`).join('')+`<article class="card"><h3>Adhésion / licence</h3><ul>${config.fees.map(f=>`<li>${f}</li>`).join('')}</ul></article>`;
+document.getElementById('faq').innerHTML=config.faq.map(x=>`<details><summary>${x.q}</summary><p>${x.a}</p></details>`).join('');
+});
+</script></body></html>

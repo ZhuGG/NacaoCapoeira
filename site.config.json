@@ -1,0 +1,119 @@
+{
+  "siteName": "Nação Capoeira — Oullins / Pierre-Bénite",
+  "shortName": "Nação Capoeira Oullins",
+  "hostInstitution": "Section rattachée au PLO (Patronage Laïque d'Oullins)",
+  "seasonLabel": "Saison 2024-2025 (informations publiques, à confirmer chaque rentrée)",
+  "address": "27 rue Diderot, 69600 Oullins",
+  "phone": "04 78 51 34 26",
+  "email": "capoeira@ploullins.fr",
+  "mapQuery": "27 rue Diderot, 69600 Oullins",
+  "externalLinks": [
+    {
+      "label": "Site PLO",
+      "url": "https://ploullins.fr/capoeira/"
+    },
+    {
+      "label": "Site historique",
+      "url": "https://nacaocapoeira.free.fr"
+    }
+  ],
+  "people": {
+    "showSectionLead": true,
+    "sectionLead": {
+      "name": "Thierry Chossinand",
+      "role": "Responsable de section",
+      "note": "Coordonnées personnelles potentiellement évolutives.",
+      "phone": "06 74 22 99 91"
+    },
+    "teacher": {
+      "name": "Contra Mestre Mamolengo",
+      "role": "Encadrement technique"
+    }
+  },
+  "history": [
+    {
+      "year": "2001",
+      "title": "Création de la section",
+      "description": "Ouverture de la section capoeira au sein du PLO en septembre 2001."
+    },
+    {
+      "year": "2001-2000s",
+      "title": "Transmission initiale",
+      "description": "L'enseignement commence avec Mestre Zé Doro et pose des bases solides."
+    },
+    {
+      "year": "Aujourd'hui",
+      "title": "Continuité vivante",
+      "description": "La section poursuit sa transmission entre pratique corporelle, musique et culture."
+    }
+  ],
+  "schedules": [
+    {
+      "audience": "Enfants 6–14 ans",
+      "level": "Tous niveaux",
+      "day": "Vendredi",
+      "time": "18h00–19h00",
+      "location": "Gymnase Jean Macé"
+    },
+    {
+      "audience": "Ados / Adultes",
+      "level": "Débutants",
+      "day": "Mardi",
+      "time": "18h30–20h00",
+      "location": "Gymnase Jean Macé"
+    },
+    {
+      "audience": "Ados / Adultes",
+      "level": "Débutants",
+      "day": "Jeudi",
+      "time": "18h30–20h00",
+      "location": "Gymnase Jean Macé"
+    },
+    {
+      "audience": "Ados / Adultes",
+      "level": "Confirmés",
+      "day": "Mardi",
+      "time": "20h00–21h30",
+      "location": "Gymnase Jean Macé"
+    },
+    {
+      "audience": "Ados / Adultes",
+      "level": "Confirmés",
+      "day": "Jeudi",
+      "time": "20h00–21h30",
+      "location": "Gymnase Jean Macé"
+    }
+  ],
+  "prices": [
+    {
+      "label": "Enfants 6–14 ans",
+      "price": "110 €"
+    },
+    {
+      "label": "Ados 15–17 ans",
+      "price": "200 €"
+    },
+    {
+      "label": "Adultes 18+",
+      "price": "260 €"
+    }
+  ],
+  "fees": [
+    "Licence / adhésion mineurs : 36 € OPB / 39 € hors OPB",
+    "Licence / adhésion majeurs : 47 € OPB / 50 € hors OPB"
+  ],
+  "faq": [
+    {
+      "q": "Puis-je venir essayer sans expérience ?",
+      "a": "Oui. Les cours débutants sont conçus pour découvrir la capoeira en sécurité, progressivement."
+    },
+    {
+      "q": "À partir de quel âge ?",
+      "a": "L'accueil se fait à partir de 6 ans, avec des formats adaptés selon les âges."
+    },
+    {
+      "q": "Que faut-il prévoir pour le premier cours ?",
+      "a": "Une tenue de sport souple, de l'eau, et l'envie d'apprendre dans un cadre collectif bienveillant."
+    }
+  ]
+}
