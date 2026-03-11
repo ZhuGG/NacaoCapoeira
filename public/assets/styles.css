@@ -86,6 +86,15 @@ img { max-width: 100%; display: block; }
 .brand-title { font-family: "Space Grotesk", sans-serif; font-size: 1rem; font-weight: 700; }
 .brand-subtitle { display: block; font-size: 0.72rem; color: var(--text-muted); }
 
+.brand-logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  object-fit: cover;
+  box-shadow: 0 8px 24px rgba(11,25,48,0.2);
+  background: var(--surface);
+}
+
 .nav-links { display: flex; align-items: center; gap: 0.3rem; }
 .nav-link {
   color: var(--text-muted);
@@ -358,4 +367,13 @@ h2 { font-size: clamp(1.6rem, 3.4vw, 2.6rem); }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+.gallery-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid rgba(16,23,34,0.1);
+  margin-bottom: 0.8rem;
 }

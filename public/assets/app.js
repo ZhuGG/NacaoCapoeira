@@ -119,7 +119,11 @@ const EMBEDDED_CONFIG = {
   "tagline": "Capoeira martiale, musicale et culturelle à Oullins / Pierre-Bénite.",
   "heroTitle": "Nação Capoeira<br>Oullins / Pierre-Bénite",
   "heroSubtitle": "Une école de capoeira vivante, rigoureuse et chaleureuse, rattachée au PLO. Cours structurés dès 6 ans, ados et adultes.",
-  "heroAsset": "",
+  "heroAsset": "public/assets/images/hero-roda.jpg",
+  "galleryAssets": [
+    "public/assets/images/gallery-01.jpg"
+  ],
+  "ogImage": "public/assets/images/og-image.jpg",
   "brand": {
     "logoMain": "public/assets/brand/logo-main.png"
   },
@@ -192,7 +196,8 @@ function setMeta(config, title, description) {
   ensureMeta('meta[property="og:title"]', { property: 'og:title' }).setAttribute('content', fullTitle);
   ensureMeta('meta[property="og:description"]', { property: 'og:description' }).setAttribute('content', description);
   ensureMeta('meta[property="og:type"]', { property: 'og:type' }).setAttribute('content', 'website');
-  ensureMeta('meta[property="og:image"]', { property: 'og:image' }).setAttribute('content', createOgPlaceholderDataUri(config.shortName || config.siteName));
+  const ogImage = config.ogImage || 'public/assets/images/og-image.jpg';
+  ensureMeta('meta[property="og:image"]', { property: 'og:image' }).setAttribute('content', ogImage);
 }
 
 function renderShell(config) {
@@ -212,7 +217,7 @@ function renderShell(config) {
   nav.innerHTML = `
     <div class="container nav-shell">
       <a class="brand" href="index.html" aria-label="Retour à l'accueil">
-        <span class="brand-mark" aria-hidden="true">NC</span>
+        ${config?.brand?.logoMain ? `<img class="brand-logo" src="${config.brand.logoMain}" alt="Logo ${config.shortName}">` : `<span class="brand-mark" aria-hidden="true">NC</span>`}
         <span>
           <span class="brand-title">${config.shortName}</span>
           <small class="brand-subtitle">${config.hostInstitution}</small>

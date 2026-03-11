@@ -1,14 +1,24 @@
 <!doctype html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Galerie et temps forts : baptêmes, rodas, stages et événements."><meta property="og:title" content="Galerie"><meta property="og:description" content="Galerie premium prête à recevoir les médias du club.">
+<meta name="description" content="Galerie et temps forts : baptêmes, rodas, stages et événements."><meta property="og:title" content="Galerie"><meta property="og:description" content="Galerie photo de la section Nação Capoeira.">
 <link rel="stylesheet" href="public/assets/styles.css"><script defer src="public/assets/app.js"></script></head>
 <body><header id="site-nav" class="topbar"></header><main class="section"><div class="container">
 <span class="eyebrow">Galerie / Temps forts</span><h1>Rodas, baptêmes, stages, démonstrations</h1>
-<p class="lead">Cette galerie utilise uniquement des placeholders CSS élégants pour rester robuste sans fichiers médias binaires.</p>
-<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr));">
-  <figure class="card reveal"><div class="media-placeholder media-gallery" role="img" aria-label="Placeholder galerie baptême"></div><figcaption class="small">Baptême & passage de cordes</figcaption></figure>
-  <figure class="card reveal"><div class="media-placeholder media-gallery alt" role="img" aria-label="Placeholder galerie stage musique"></div><figcaption class="small">Stage musique</figcaption></figure>
-  <figure class="card reveal"><div class="media-placeholder media-gallery" role="img" aria-label="Placeholder galerie démonstration"></div><figcaption class="small">Démonstration publique</figcaption></figure>
-</div>
-<div class="card reveal" style="margin-top:1rem"><h2>Ajouter vos médias</h2><p>Remplacer les fichiers cibles listés dans le README par des visuels réels du club en conservant les noms attendus.</p></div>
+<p class="lead">Aperçu des moments de pratique et de transmission de la section.</p>
+<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr));" id="galleryGrid"></div>
 </div></main><div id="float-cta" class="float-cta"></div><footer id="site-footer" class="footer"></footer>
-<script>site.loadConfig().then(c=>{site.setMeta(c,'Galerie','Temps forts de la section Nação Capoeira.');site.renderShell(c);site.injectStructuredData(c);site.initRevealAnimations();});</script></body></html>
+<script>
+site.loadConfig().then(c=>{
+  site.setMeta(c,'Galerie','Temps forts de la section Nação Capoeira.');
+  site.renderShell(c);
+  site.injectStructuredData(c);
+  site.initRevealAnimations();
+
+  const assets = c.galleryAssets?.length ? c.galleryAssets : ['public/assets/images/gallery-01.jpg'];
+  const captions = ['Baptême & passage de cordes','Stage musique','Démonstration publique'];
+  const html = [0,1,2].map((i)=>{
+    const src = assets[i] || assets[0];
+    return `<figure class="card reveal"><img class="gallery-image" src="${src}" alt="${captions[i]}" loading="lazy"><figcaption class="small">${captions[i]}</figcaption></figure>`;
+  }).join('');
+  document.getElementById('galleryGrid').innerHTML = html;
+});
+</script></body></html>

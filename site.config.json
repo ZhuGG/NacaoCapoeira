@@ -119,7 +119,11 @@
   "tagline": "Capoeira martiale, musicale et culturelle à Oullins / Pierre-Bénite.",
   "heroTitle": "Nação Capoeira<br>Oullins / Pierre-Bénite",
   "heroSubtitle": "Une école de capoeira vivante, rigoureuse et chaleureuse, rattachée au PLO. Cours structurés dès 6 ans, ados et adultes.",
-  "heroAsset": "",
+  "heroAsset": "public/assets/images/hero-roda.jpg",
+  "galleryAssets": [
+    "public/assets/images/gallery-01.jpg"
+  ],
+  "ogImage": "public/assets/images/og-image.jpg",
   "brand": {
     "logoMain": "public/assets/brand/logo-main.png"
   },
