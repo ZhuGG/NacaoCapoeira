@@ -340,8 +340,9 @@ h2 { font-size: clamp(1.6rem, 3.4vw, 2.6rem); }
   box-shadow: var(--shadow-soft);
 }
 
-.reveal { opacity: 0; transform: translateY(18px); transition: opacity 500ms ease, transform 500ms ease; }
-.reveal.in-view { opacity: 1; transform: none; }
+.reveal { opacity: 1; transform: none; }
+html.js .reveal { opacity: 0; transform: translateY(18px); transition: opacity 500ms ease, transform 500ms ease; }
+html.js .reveal.in-view { opacity: 1; transform: none; }
 
 @keyframes drift {
   0%,100% { transform: translate(0,0); }

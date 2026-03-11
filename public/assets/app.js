@@ -1,3 +1,5 @@
+document.documentElement.classList.add('js');
+
 const EMBEDDED_CONFIG = {
   "siteName": "Nação Capoeira — Oullins / Pierre-Bénite",
   "shortName": "Nação Capoeira Oullins",
