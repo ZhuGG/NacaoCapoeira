@@ -24,7 +24,7 @@ function renderShell(config) {
 
   nav.innerHTML = `
   <div class="container nav">
-    <a class="brand" href="index.html">${config.shortName}<small>${config.hostInstitution}</small></a>
+    <a class="brand" href="index.html"><img src="public/assets/logo-nacao.svg" alt="Logo Nação Capoeira" /><span>${config.shortName}<small>${config.hostInstitution}</small></span></a>
     <div class="nav-links">
       ${links.map(([href, label]) => `<a href="${href}" class="${pathname === href ? 'active' : ''}">${label}</a>`).join('')}
     </div>

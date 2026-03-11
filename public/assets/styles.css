@@ -1,13 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&display=swap");
+
 :root {
-  --bg: #090d14;
-  --surface: #101827;
-  --surface-soft: #142038;
-  --text: #f2f5f9;
-  --muted: #b9c4d6;
-  --green: #00a85a;
-  --yellow: #f3ce33;
-  --blue: #1f4fa0;
-  --accent: #f25c2a;
+  --bg: #0d1118;
+  --surface: #1a141a;
+  --surface-soft: #1f222a;
+  --text: #f4f4f4;
+  --muted: #c6cad1;
+  --green: #00843d;
+  --yellow: #fecb2e;
+  --blue: #003f87;
+  --accent: #f04424;
   --radius: 18px;
   color-scheme: dark;
 }
@@ -16,19 +18,22 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;font-family:Inter,system-ui,sans-serif;background:radial-gradient(circle at 10% 0%,rgba(31,79,160,.24),transparent 45%),radial-gradient(circle at 90% 15%,rgba(242,92,42,.18),transparent 30%),var(--bg);color:var(--text);line-height:1.6}
+body{margin:0;font-family:"Space Grotesk",Inter,system-ui,sans-serif;background:radial-gradient(circle at 10% 0%,rgba(0,63,135,.24),transparent 45%),radial-gradient(circle at 90% 15%,rgba(240,68,36,.18),transparent 30%),var(--bg);color:var(--text);line-height:1.6}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 .container{width:min(1120px,92vw);margin-inline:auto}
 .topbar{position:sticky;top:0;z-index:20;backdrop-filter:blur(10px);background:color-mix(in srgb,var(--bg) 88%,transparent);border-bottom:1px solid color-mix(in srgb,var(--muted) 25%,transparent)}
 .nav{display:flex;align-items:center;justify-content:space-between;padding:.9rem 0}
-.brand{font-weight:800;letter-spacing:.02em}
+.brand{font-weight:800;letter-spacing:.02em;display:flex;align-items:center;gap:.6rem}
+.brand img{width:42px;height:42px;object-fit:contain;filter:drop-shadow(0 2px 5px rgba(0,0,0,.35))}
 .brand small{display:block;font-weight:500;color:var(--muted);font-size:.72rem}
 .nav-links{display:flex;gap:1rem;flex-wrap:wrap}
 .nav-links a{padding:.45rem .75rem;border-radius:999px;color:var(--muted)}
 .nav-links a.active,.nav-links a:hover{color:var(--text);background:color-mix(in srgb,var(--surface-soft) 80%,transparent)}
 .hero{padding:5rem 0 3rem;position:relative;overflow:hidden}
 .hero::after{content:"";position:absolute;inset:0;background:repeating-radial-gradient(circle at 70% 20%,transparent 0 45px,rgba(243,206,51,.05) 46px 47px);pointer-events:none}
+.hero .container{position:relative;z-index:2}
+.hero::before{content:"";position:absolute;right:min(6vw,90px);top:48px;width:min(26vw,260px);aspect-ratio:1;background:url("logo-nacao.svg") center/contain no-repeat;opacity:.2;pointer-events:none}
 .eyebrow{display:inline-block;padding:.35rem .75rem;border:1px solid color-mix(in srgb,var(--muted) 40%,transparent);border-radius:999px;color:var(--muted);font-size:.82rem}
 h1,h2,h3{line-height:1.2;margin:0 0 .8rem}
 h1{font-size:clamp(2rem,5vw,4rem)}

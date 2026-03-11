@@ -1,0 +1,30 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo Nação Capoeira">
+  <defs>
+    <linearGradient id="flame" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F04424"/>
+      <stop offset="1" stop-color="#F56D1E"/>
+    </linearGradient>
+    <linearGradient id="rim" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1A141A"/>
+      <stop offset="1" stop-color="#23252C"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="256" cy="256" r="230" fill="none" stroke="url(#flame)" stroke-width="44"/>
+  <circle cx="256" cy="256" r="198" fill="url(#rim)" stroke="#F4F4F4" stroke-width="6"/>
+  <circle cx="256" cy="256" r="156" fill="#F4F4F4"/>
+
+  <clipPath id="clipCircle">
+    <circle cx="256" cy="256" r="148"/>
+  </clipPath>
+  <g clip-path="url(#clipCircle)">
+    <rect x="100" y="108" width="312" height="296" fill="#00843D"/>
+    <polygon points="256,138 392,256 256,374 120,256" fill="#FECB2E"/>
+    <circle cx="256" cy="256" r="76" fill="#003F87"/>
+    <path d="M153 285c52-26 154-26 206 0" fill="none" stroke="#F4F4F4" stroke-width="14" stroke-linecap="round"/>
+    <path d="M174 320c42-26 78-47 124-76" fill="none" stroke="#1A141A" stroke-width="8" stroke-linecap="round"/>
+  </g>
+
+  <path d="M126 121c45-41 96-58 130-58 34 0 86 16 130 58" fill="none" stroke="#F4F4F4" stroke-width="18" stroke-linecap="round"/>
+  <path d="M128 392c35 35 79 55 128 55s93-20 128-55" fill="none" stroke="#F4F4F4" stroke-width="18" stroke-linecap="round"/>
+</svg>
