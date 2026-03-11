@@ -1,0 +1,16 @@
+<!doctype html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Contact, accès et informations pour premier cours de capoeira."><meta property="og:title" content="Contact"><meta property="og:description" content="Contactez la section Nação Capoeira Oullins / Pierre-Bénite.">
+<link rel="stylesheet" href="public/assets/styles.css"><script defer src="public/assets/app.js"></script></head>
+<body><header id="site-nav" class="topbar"></header><main class="section"><div class="container">
+<span class="eyebrow">Contact</span><h1>Parlons de votre premier cours</h1>
+<div class="grid" style="grid-template-columns:1fr 1fr;align-items:start">
+<article class="card"><h2>Coordonnées</h2><p id="addr"></p><p><a id="phone"></a><br><a id="mail"></a></p><div class="cta-row"><a id="route" class="btn secondary" target="_blank" rel="noopener">Itinéraire</a><a id="call" class="btn primary">Appeler</a></div></article>
+<article class="card"><h2>Formulaire</h2><p class="small">Formulaire prêt à connecter (Formspree ou backend). Actuellement en démonstration locale.</p>
+<form id="form"><label>Nom<br><input required name="name" style="width:100%"></label><br><label>Email<br><input required type="email" name="email" style="width:100%"></label><br><label>Message<br><textarea required name="message" rows="5" style="width:100%"></textarea></label><br><button class="btn primary" type="submit">Envoyer</button><p id="status" class="small"></p></form>
+</article></div></div></main><div id="float-cta" class="float-cta"></div><footer id="site-footer" class="footer"></footer>
+<script>
+site.loadConfig().then(c=>{site.setMeta(c,'Contact','Coordonnées et accès au club.');site.renderShell(c);site.injectStructuredData(c);
+document.getElementById('addr').textContent=c.address;document.getElementById('phone').textContent=c.phone;document.getElementById('phone').href='tel:'+c.phone.replace(/\s+/g,'');document.getElementById('mail').textContent=c.email;document.getElementById('mail').href='mailto:'+c.email;document.getElementById('route').href=`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(c.mapQuery)}`;document.getElementById('call').href='tel:'+c.phone.replace(/\s+/g,'');
+});
+document.getElementById('form').addEventListener('submit',e=>{e.preventDefault();document.getElementById('status').textContent='Merci, votre message est prêt à être transmis une fois le backend branché.';});
+</script></body></html>

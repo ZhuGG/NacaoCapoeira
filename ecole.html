@@ -1,0 +1,18 @@
+<!doctype html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Histoire, pédagogie et équipe de Nação Capoeira Oullins."><meta property="og:title" content="Le Club / L'école"><meta property="og:description" content="Une section capoeira ancrée au PLO depuis 2001.">
+<link rel="stylesheet" href="public/assets/styles.css"><script defer src="public/assets/app.js"></script></head>
+<body><header id="site-nav" class="topbar"></header><main class="section"><div class="container">
+<span class="eyebrow">Le Club / L'école</span><h1>Une section ancrée localement, ouverte à toutes les générations</h1>
+<p class="lead">Rattachée au PLO, la section développe depuis plus de vingt ans une capoeira exigeante, accueillante et culturellement vivante.</p>
+<div class="grid" style="grid-template-columns:1fr 1fr"><article class="card"><h2>Philosophie pédagogique</h2><p>La progression associe précision technique, écoute musicale, confiance en soi et respect du collectif.</p><p>Chaque pratiquant avance à son rythme, avec des repères clairs et une exigence bienveillante.</p></article>
+<article class="card"><h2>Encadrement</h2><p id="teacher"></p><p id="lead"></p><p class="small">Certaines informations individuelles sont publiques mais susceptibles d'évoluer : elles restent facilement modifiables.</p></article></div>
+<div class="card" style="margin-top:1rem"><h2>Frise historique</h2><div id="history" class="timeline"></div></div>
+</div></main><div id="float-cta" class="float-cta"></div><footer id="site-footer" class="footer"></footer>
+<script>
+site.loadConfig().then(config=>{site.setMeta(config,"Le Club / L'école",'Histoire, pédagogie et équipe.');site.renderShell(config);site.injectStructuredData(config);
+document.getElementById('teacher').innerHTML=`<strong>${config.people.teacher.name}</strong> · ${config.people.teacher.role}`;
+const lead=config.people.showSectionLead?`${config.people.sectionLead.role} : <strong>${config.people.sectionLead.name}</strong> · ${config.people.sectionLead.phone}`:'Coordonnées du responsable masquées.';
+document.getElementById('lead').innerHTML=lead;
+document.getElementById('history').innerHTML=config.history.map(h=>`<article class="timeline-item"><p class="kicker">${h.year}</p><h3>${h.title}</h3><p>${h.description}</p></article>`).join('');
+});
+</script></body></html>
