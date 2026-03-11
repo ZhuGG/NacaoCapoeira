@@ -1,1 +1,78 @@
-hello Codex :)
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Nação Capoeira à Oullins : cours, culture, musique et mouvement pour enfants, ados et adultes." />
+  <meta property="og:title" content="Nação Capoeira" />
+  <meta property="og:description" content="Découvrez la section capoeira rattachée au PLO à Oullins / Pierre-Bénite." />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="public/assets/styles.css" />
+  <script defer src="public/assets/app.js"></script>
+</head>
+<body>
+  <header id="site-nav" class="topbar"></header>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="eyebrow">Capoeira · Mouvement · Culture · Transmission</span>
+        <h1>Nação Capoeira<br>Oullins / Pierre-Bénite</h1>
+        <p class="lead">Un espace vivant où le corps, la musique et le collectif avancent ensemble. Cours structurés, pédagogie exigeante et atmosphère accueillante à partir de 6 ans.</p>
+        <div class="cta-row">
+          <a href="cours-tarifs.html" class="btn primary">Voir les cours</a>
+          <a href="contact.html" class="btn secondary">Réserver un essai</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid grid-3">
+        <article class="card"><p class="kicker">Mouvement</p><h3>Corps précis, énergie libre</h3><p>Travail technique, déplacements, esquives, acrobaties progressives et expression personnelle.</p></article>
+        <article class="card"><p class="kicker">Musique</p><h3>Rythme et écoute</h3><p>Berimbau, percussions, chant et repères collectifs : la musique structure la pratique.</p></article>
+        <article class="card"><p class="kicker">Culture</p><h3>Héritage vivant</h3><p>Une tradition en mouvement, transmise avec respect et adaptée aux publics d'aujourd'hui.</p></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid" style="grid-template-columns:1.3fr .7fr;align-items:start;">
+        <article class="card">
+          <span class="badge" id="seasonLabel"></span>
+          <h2>Horaires en un coup d'œil</h2>
+          <table class="table" id="schedulePreview"></table>
+          <p class="small">Détails complets, tarifs et FAQ sur la page dédiée.</p>
+          <a class="btn secondary" href="cours-tarifs.html">Cours & Tarifs</a>
+        </article>
+        <aside class="card">
+          <h3>Premier cours</h3>
+          <p>Tenue de sport souple, bouteille d'eau et envie d'apprendre. L'équipe vous guide dès l'accueil.</p>
+          <a class="btn primary" href="contact.html">Nous contacter</a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container card">
+        <h2>Accès</h2>
+        <p id="address"></p>
+        <div class="cta-row">
+          <a id="mapLink" class="btn secondary" target="_blank" rel="noopener">Itinéraire Google Maps</a>
+          <a class="btn secondary" href="tel:0478513426">04 78 51 34 26</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="float-cta" class="float-cta"></div>
+  <footer id="site-footer" class="footer"></footer>
+
+  <script>
+    site.loadConfig().then((config) => {
+      site.setMeta(config, 'Accueil', 'École de capoeira à Oullins / Pierre-Bénite : cours, musique et culture.');
+      site.renderShell(config); site.injectStructuredData(config);
+      document.getElementById('seasonLabel').textContent = config.seasonLabel;
+      document.getElementById('address').textContent = config.address;
+      document.getElementById('mapLink').href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(config.mapQuery)}`;
+      document.getElementById('schedulePreview').innerHTML = `<tr><th>Public</th><th>Créneau</th></tr>` + config.schedules.slice(0,3).map(s=>`<tr><td>${s.audience} · ${s.level}</td><td>${s.day} ${s.time}</td></tr>`).join('');
+    });
+  </script>
+</body>
+</html>
